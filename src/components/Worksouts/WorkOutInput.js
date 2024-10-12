@@ -1,5 +1,5 @@
 import React from 'react';
-import 'components/Worksouts/Workout.css';  // Assuming you have some CSS file for styling
+import './Workout.css';  // Assuming you have some CSS file for styling
 
 const BlankPage = () => {
   return (

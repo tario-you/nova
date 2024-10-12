@@ -41,11 +41,18 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 #root {
   width: 100%;
   height: 100%;
+}
+
+/* App.css */
+.main-content {
+  padding-top: 80px; /* Adjust this to match the height of your navbar */
 }
 
