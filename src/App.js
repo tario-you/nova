@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BodyModel from './components/BodyModel/BodyModel';
 import Levelup from './components/Level/Levelup';
 import SetupForm from './components/SetupForm/SetupForm';
-import Workout from './components/Worksouts/WorkOutInput';
+import Workout from './components/Workout/WorkOutInput';
 import Navbar from './components/Navbar/Navbar';
 import './App.css'; // Import the global styles
 
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/body-model" element={<BodyModel />} />
           <Route path="/level-up" element={<Levelup />} />
           <Route path="/setup-form" element={<SetupForm />} />
-          <Route path="/workouts" element={<Workout />} />
+          <Route path="/workout" element={<Workout />} />
         </Routes>
       </div>
     </Router>

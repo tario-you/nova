@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import Sidebar from './Workout.css';
+import Sidebar from './Sidebar';
 
 const Workout = () => {
     return (
