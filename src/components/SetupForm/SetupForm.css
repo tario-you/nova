@@ -1,3 +1,30 @@
+/* main container */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensures space between left and right */
+  align-items: center;
+  background-color: #121212;
+  height: 100%;
+}
+
+/* instruction container */
+.instruction-container {
+  flex:1;
+  background-color: #121212;
+}
+
+.instruction-container h1 {
+  color: #ffffff;
+}
+
+/* setup form container */
+.setup-form-container {
+  flex:1;
+  background-color: #323233;
+}
+
+/* setup form */
 .setup-form {
     display: flex;
     flex-direction: column;
