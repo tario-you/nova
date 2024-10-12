@@ -1,17 +1,29 @@
-.blank-page-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #323232;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    color: #121212;
-  }
-  
-  p {
-    color: #666;
-  }
+.sidebar {
+  background-color: #121212;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0px;
+  width: 20%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%; /* Adjust height as necessary */
+}
+
+.sidebar h2 {
+  margin-bottom: 20px; /* Margin below the header */
+}
+
+.sidebar ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;           /* Remove padding */
+}
+
+.sidebar ul li {
+  margin: 15px 0;      /* Space between items */
+  cursor: pointer;      /* Pointer cursor on hover */
+}
+
+.sidebar ul li:hover {
+  text-decoration: underline; /* Underline on hover */
+}
