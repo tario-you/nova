@@ -1,39 +1,30 @@
-/* main container */
 .main-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Ensures space between left and right */
+  flex-direction: column;
+  height: 100vh;
   align-items: center;
-  background-color: #121212;
-  height: 100%;
 }
 
-/* instruction container */
 .instruction-container {
-  flex:1;
-  background-color: #121212;
-}
-
-.instruction-container h1 {
-  color: #ffffff;
+  text-align: center;
 }
 
 /* setup form container */
 .setup-form-container {
-  flex:1;
-  background-color: #323233;
 }
 
 /* setup form */
 .setup-form {
     display: flex;
     flex-direction: column;
+    min-width: 300px;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px groove #121212;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #323232;
+    gap: 8px;
   }
   
   .form-group {
@@ -45,33 +36,40 @@
   .form-group label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: #ffffff;
   }
   
   .form-group input,
-  .form-group select {
+  .form-group select,
+  .form-group textarea {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #121212;
     border-radius: 4px;
+    background-color: #494949;
+    color: white;
   }
   
   .submit-button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #494949;
+    color: white;
+    font-weight: bold;
     border: none;
     padding: 10px 15px;
     font-size: 16px;
     border-radius: 4px;
+    border: 1px solid #121212;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .submit-button:hover {
-    background-color: #0056b3;
+    background-color: white;
+    color: #494949;
   }
   
   /* Responsive styling */
-  @media (max-width: 600px) {
+  @media (max-width: 300px) {
     .setup-form {
       padding: 10px;
     }

@@ -1,13 +1,18 @@
+// src/App.js
 import React from 'react';
-import './Workout.css';  // Assuming you have some CSS file for styling
+import Sidebar from './Workout.css';
 
-const BlankPage = () => {
-  return (
-    <div className="blank-page-container">
-      <h1>Welcome to Your Blank Page!</h1>
-      <p>This is a placeholder page for you to start building your React app.</p>
-    </div>
-  );
+const Workout = () => {
+    return (
+        <div className="app-container">
+            <Sidebar />
+            <div className="main-content">
+                <h1>Welcome to the Workout Tracker</h1>
+                <p>This is the main content area.</p>
+                {/* Add more content here */}
+            </div>
+        </div>
+    );
 };
 
-export default BlankPage;
+export default Workout;

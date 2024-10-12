@@ -17,10 +17,10 @@ const SetupForm = () => {
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const {gender, weight, bench, squat, clean } = formData;
+    const { gender, weight, bench, squat, clean } = formData;
     if (gender === "") {
       alert("Please enter your gender.");
       return;
@@ -35,10 +35,12 @@ const SetupForm = () => {
   };
 
   return (
-    <div className="main-container">
 
+    <div className="main-container">
+      
       <div className="instruction-container">
-        <h1>apple</h1>
+        <h1>Setup Form</h1>
+        <p> Input values in order for your progress to be better calculated. </p>
       </div>
 
       <div className="setup-form-container">
@@ -100,8 +102,9 @@ const SetupForm = () => {
           <button className="submit-button" type="submit">Submit</button>
         </form>
       </div>
-
+      
     </div>
+
   );
 };
 
