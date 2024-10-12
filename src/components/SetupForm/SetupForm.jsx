@@ -39,7 +39,8 @@ const SetupForm = () => {
     <div className="main-container">
       
       <div className="instruction-container">
-
+        <h1>Setup Form</h1>
+        <p> Input values in order for your progress to be better calculated. </p>
       </div>
 
       <div className="setup-form-container">
