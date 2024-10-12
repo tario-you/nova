@@ -56,3 +56,10 @@ html, body {
   padding-top: 80px; /* Adjust this to match the height of your navbar */
 }
 
+body {
+  background-color: #121212;
+}
+
+h1,h2,h3,text {
+  color: white;
+}
