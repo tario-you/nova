@@ -1,116 +1,318 @@
 // src/App.js
-import React, {useState} from 'react';
+import React, { useState, useEffect } from "react";
+import "./Workout.css";
+import Select from "react-select";
+
+const muscleGroups = [
+  {
+    name: "abs",
+    image: "body_parts_model/abs_full.png",
+    offsetX: -400,
+    offsetY: -520,
+    opacity: 0.1,
+  },
+  {
+    name: "upper abs",
+    image: "body_parts_model/abs_upper.png",
+    offsetX: -400,
+    offsetY: -520,
+    opacity: 0.1,
+  },
+  {
+    name: "lower abs",
+    image: "body_parts_model/abs_lower.png",
+    offsetX: -400,
+    offsetY: -520,
+    opacity: 0.1,
+  },
+  {
+    name: "biceps",
+    image: "body_parts_model/bicep.png",
+    offsetX: -400,
+    offsetY: -605,
+    opacity: 0.1,
+  },
+  {
+    name: "tibia",
+    image: "body_parts_model/calves_front.png",
+    offsetX: -375,
+    offsetY: 300,
+    opacity: 0.1,
+  },
+  {
+    name: "chest",
+    image: "body_parts_model/chest.png",
+    offsetX: -400,
+    offsetY: -600,
+    opacity: 0.1,
+  },
+  {
+    name: "forearms",
+    image: "body_parts_model/forearms_front.png",
+    offsetX: -100,
+    offsetY: -450,
+    rotation: 30,
+    scale: 0.8,
+  },
+  {
+    name: "obliques",
+    image: "body_parts_model/obliques.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "shoulder_front",
+    image: "body_parts_model/shoulder_front.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "thigh_inner",
+    image: "body_parts_model/thigh_inner.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "thigh_lower",
+    image: "body_parts_model/thigh_lower.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "thigh_outer",
+    image: "body_parts_model/thigh_outer.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "thigh",
+    image: "body_parts_model/thigh.png",
+    offsetX: -400,
+    offsetY: 500,
+  },
+  {
+    name: "back_lower",
+    image: "body_parts_model/back_lower.png",
+  },
+  {
+    name: "calves",
+    image: "body_parts_model/calves.png",
+  },
+  {
+    name: "forearms_back",
+    image: "body_parts_model/forearms_back.png",
+  },
+  {
+    name: "glutes",
+    image: "body_parts_model/glutes.png",
+  },
+  {
+    name: "hamstring",
+    image: "body_parts_model/hamstring.png",
+  },
+  {
+    name: "lats",
+    image: "body_parts_model/lats.png",
+  },
+  {
+    name: "neck",
+    image: "body_parts_model/neck.png",
+  },
+  {
+    name: "shoulder_back",
+    image: "body_parts_model/shoulder_back.png",
+  },
+  {
+    name: "trapezius",
+    image: "body_parts_model/trapezius.png",
+  },
+  {
+    name: "triceps",
+    image: "body_parts_model/triceps.png",
+  },
+];
 
 const Workout = () => {
+  const [workouts, setWorkouts] = useState([]);
 
-    const [workouts, setWorkouts] = useState([]);
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundImage: `url(${state.data.image})`,
+      backgroundSize: "20px 20px",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "10px center",
+      paddingLeft: "40px",
+      backgroundColor: state.isFocused ? "#333" : "black",
+      color: "white",
+    }),
+    menu: (provided) => ({
+      ...provided,
+      backgroundColor: "black",
+    }),
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: "black",
+      color: "white",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "white",
+    }),
+  };
 
-    const addWorkout = (newWorkout) => {
-        setWorkouts([...workouts, newWorkout]);
-    };
+  const options = muscleGroups.map((group) => ({
+    value: group.name,
+    label: group.name,
+    image: group.image,
+  }));
 
-    const [workoutData, setWorkoutData] = useState({
-        exerciseName: "",
-        muscleGroup: "",
-        sets: 0,
-        reps: 0,
-        weight: 0,
-      });
-    
-    const handleChange = (e) => {
-        setWorkoutData({
-          ...workoutData,
-          [e.target.name]: e.target.value,
-        });
-      };
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        const { exerciseName, muscleGroup, sets, reps, weight } = workoutData;
-        if (exerciseName === "" || muscleGroup === "") {
-          alert("Please enter the exercise name and muscle group.");
-          return;
+  useEffect(() => {
+    const select = document.querySelector('select[name="muscleGroup"]');
+    if (select) {
+      const options = select.options;
+      for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const imagePath = option.getAttribute("data-image");
+        if (imagePath) {
+          option.style.backgroundImage = `url(${imagePath})`;
         }
-        if (sets < 0 || reps < 0 || weight < 0) {
-          alert("Please enter only positive values for sets, reps, and weight.");
-          return;
-        }
-    
-        // ADD API CALL HERE
-        console.log("Workout Data Submitted:", workoutData);
-        addWorkout(workoutData);
-      };
+      }
+    }
+  }, []);
 
-    return (
-        <div className="main-container">
-      <div className="instruction-container">
-        <h1>Add Workout</h1>
-        <p> Input your workout details below. </p>
-      </div>
+  const addWorkout = (newWorkout) => {
+    setWorkouts([...workouts, newWorkout]);
+  };
 
-      <div className="add-workout-form-container">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Exercise Name:</label>
-            <input
-              type="text"
-              name="exerciseName"
-              value={workoutData.exerciseName}
-              onChange={handleChange}
-              required
-            />
+  const [workoutData, setWorkoutData] = useState({
+    exerciseName: "",
+    muscleGroup: "",
+    sets: 0,
+    reps: 0,
+    weight: 0,
+  });
+
+  const handleChange = (e) => {
+    setWorkoutData({
+      ...workoutData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { exerciseName, muscleGroup, sets, reps, weight } = workoutData;
+    if (exerciseName === "" || muscleGroup === "") {
+      alert("Please enter the exercise name and muscle group.");
+      return;
+    }
+    if (sets < 0 || reps < 0 || weight < 0) {
+      alert("Please enter only positive values for sets, reps, and weight.");
+      return;
+    }
+
+    // ADD API CALL HERE
+    console.log("Workout Data Submitted:", workoutData);
+    addWorkout(workoutData);
+  };
+
+  return (
+    <div className="main-container">
+      <div>
+        <div className="workout-form-section">
+          <div className="instruction-container">
+            <h1>Add Workout</h1>
+            <p> Input your workout details below. </p>
           </div>
 
-          <div className="form-group">
-            <label>Muscle Group:</label>
-            <input
-              type="text"
-              name="muscleGroup"
-              value={workoutData.muscleGroup}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <div className="add-workout-form-container">
+            <form className="form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Exercise Name:</label>
+                <input
+                  type="text"
+                  name="exerciseName"
+                  value={workoutData.exerciseName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className="form-group">
-            <label>Sets:</label>
-            <input
-              type="number"
-              name="sets"
-              value={workoutData.sets}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className="form-group">
+                <label>Muscle Group:</label>
+                <Select
+                  options={options}
+                  styles={customStyles}
+                  onChange={(selectedOption) =>
+                    handleChange({
+                      target: {
+                        name: "muscleGroup",
+                        value: selectedOption.value,
+                      },
+                    })
+                  }
+                  value={options.find(
+                    (option) => option.value === workoutData.muscleGroup
+                  )}
+                />
+              </div>
 
-          <div className="form-group">
-            <label>Reps:</label>
-            <input
-              type="number"
-              name="reps"
-              value={workoutData.reps}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className="form-group">
+                <label>Sets:</label>
+                <input
+                  type="number"
+                  name="sets"
+                  value={workoutData.sets}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className="form-group">
-            <label>Weight (in lbs):</label>
-            <input
-              type="number"
-              name="weight"
-              value={workoutData.weight}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className="form-group">
+                <label>Reps:</label>
+                <input
+                  type="number"
+                  name="reps"
+                  value={workoutData.reps}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <button className="submit-button" type="submit">Add Workout</button>
-        </form>
+              <div className="form-group">
+                <label>Weight (in lbs):</label>
+                <input
+                  type="number"
+                  name="weight"
+                  value={workoutData.weight}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <button className="submit-button" type="submit">
+                Add Workout
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="workout-list-container">
+          <h2>Workout List</h2>
+          <ul>
+            {workouts.map((workout, index) => (
+              <li key={index}>
+                {workout.exerciseName} - {workout.muscleGroup} - {workout.sets}{" "}
+                sets, {workout.reps} reps, {workout.weight} lbs
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Workout;
