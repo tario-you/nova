@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "run-python": "source .venv/bin/activate && python path/to/your_script.py",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
