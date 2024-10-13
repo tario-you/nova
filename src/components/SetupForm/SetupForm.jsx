@@ -40,13 +40,13 @@ const SetupForm = () => {
       
       <div className="instruction-container">
         <h1>Setup Form</h1>
-        <p> Input values in order for your progress to be better calculated. </p>
+        <p> Input your max's to better track your progress. </p>
       </div>
 
       <div className="setup-form-container">
-        <form className="setup-form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Gender:</label>
+            <label>Gender</label>
             <select name="gender" value={formData.gender} onChange={handleChange}>
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
@@ -56,7 +56,7 @@ const SetupForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Weight (in lbs):</label>
+            <label>Weight (lbs)</label>
             <input
               type="number"
               name="weight"
@@ -67,7 +67,7 @@ const SetupForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Max Bench Press (in lbs):</label>
+            <label>Max Bench Press (lbs)</label>
             <input
               type="number"
               name="bench"
@@ -78,7 +78,7 @@ const SetupForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Max Squat (in lbs):</label>
+            <label>Max Squat (lbs)</label>
             <input
               type="number"
               name="squat"
@@ -89,7 +89,7 @@ const SetupForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Max Clean (in lbs):</label>
+            <label>Max Clean (lbs)</label>
             <input
               type="number"
               name="clean"

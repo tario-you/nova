@@ -5,7 +5,7 @@ import './Navbar.css'; // Import the CSS file for styling
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="sidebar">
       <ul className="nav-links">
         <li>
           <NavLink to="/body-model" className="nav-link" activeClassName="active-link">
@@ -23,7 +23,11 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
+<<<<<<< HEAD
           <NavLink to="/worksout" className="nav-link" activeClassName="active-link">
+=======
+          <NavLink to="/workout" className="nav-link" activeClassName="active-link">
+>>>>>>> e5a335a8dcd3f4c203106f4f29492457f8b2885a
             Workouts
           </NavLink>
         </li>
