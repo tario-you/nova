@@ -89,9 +89,6 @@ const frontParts = [
     offsetX: -400,
     offsetY: 500,
   },
-];
-
-const backParts = [
   {
     name: 'back_lower',
     image: 'body_parts_model/back_lower.png',
