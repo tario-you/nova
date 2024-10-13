@@ -8,6 +8,7 @@ import Workout from "./components/Workout/WorkOutInput";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.css"; // Import the global styles
 import { AuthProvider } from "./AuthContext";
+import ChatIcon from "./components/ChatIcon/ChatIcon";
 import SignUp from "./components/SignUp/SignUp";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/workout" element={<Workout />} />
           </Routes>
         </div>
+        <ChatIcon />
       </Router>
     </AuthProvider>
   );
