@@ -14,6 +14,7 @@
 .nav-links {
   list-style-type: none; /* Remove list bullets */
   padding: 0; /* Remove default padding */
+  margin-left: 17px;
 }
 
 .nav-link {
