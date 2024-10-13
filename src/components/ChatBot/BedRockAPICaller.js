@@ -1,13 +1,11 @@
-// Import the AWS SDK for JavaScript v3 Bedrock Runtime Client
 const { BedrockRuntimeClient, InvokeModelCommand } = require('@aws-sdk/client-bedrock-runtime');
 
-// Configure the AWS Bedrock client with your AWS credentials and region
 const client = new BedrockRuntimeClient({
-  region: 'us-east-1', // Replace with your AWS region
+  region: '${process.env.aws_region}',
   credentials: {
-    accessKeyId: 'YOUR_ACCESS_KEY_ID',         // Replace with your AWS access key ID
-    secretAccessKey: 'YOUR_SECRET_ACCESS_KEY', // Replace with your AWS secret access key
-  },
+    accessKeyId: '${process.env.aws_access_key_id}',
+    secretAccessKey: '${process.env.aws_access_key_id}'
+  }
 });
 
 // The guiding message for the model
@@ -21,7 +19,7 @@ async function callBedrockAPI(prompt) {
     accept: 'application/json',
     body: JSON.stringify({
       prompt: prompt,
-      max_tokens_to_sample: 512,
+      max_tokens_to_sample: 2000,
       temperature: 0.7,
       // Add any other parameters as needed
     }),
