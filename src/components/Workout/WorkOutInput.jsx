@@ -3,6 +3,12 @@ import React, {useState} from 'react';
 
 const Workout = () => {
 
+    const [workouts, setWorkouts] = useState([]);
+
+    const addWorkout = (newWorkout) => {
+        setWorkouts([...workouts, newWorkout]);
+    };
+
     const [workoutData, setWorkoutData] = useState({
         exerciseName: "",
         muscleGroup: "",
@@ -33,6 +39,7 @@ const Workout = () => {
     
         // ADD API CALL HERE
         console.log("Workout Data Submitted:", workoutData);
+        addWorkout(workoutData);
       };
 
     return (
