@@ -30,6 +30,12 @@
     background-color: #e6f2ff;
     text-align: right;
   }
+
+  .chat-message.bot {
+    background-color: #c37042;
+    color:  #fff;
+    text-align: left;
+  }
   
   .chat-input {
     display: flex;
