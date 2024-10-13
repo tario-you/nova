@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from "react";
-import "./Workout.css";
+import "./WorkOutInput.css";
 import Select from "react-select";
 
 const muscleGroups = [
@@ -148,11 +148,11 @@ const Workout = () => {
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: "black",
+      backgroundColor: "#494949",
     }),
     control: (provided) => ({
       ...provided,
-      backgroundColor: "black",
+      backgroundColor: "#494949",
       color: "white",
     }),
     singleValue: (provided) => ({
