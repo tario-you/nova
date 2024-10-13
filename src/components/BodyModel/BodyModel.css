@@ -11,3 +11,8 @@ canvas {
   height: 100% !important;
   display: block;
 }
+
+.body-model {
+  position: relative;
+  /* other styles */
+}
