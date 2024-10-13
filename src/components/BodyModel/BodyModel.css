@@ -3,7 +3,7 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 canvas {
@@ -12,7 +12,3 @@ canvas {
   display: block;
 }
 
-.body-model {
-  position: relative;
-  /* other styles */
-}

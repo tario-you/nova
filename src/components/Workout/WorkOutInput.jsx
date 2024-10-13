@@ -210,7 +210,6 @@ const Workout = () => {
         <div className="workout-form-section">
           <div className="instruction-container">
             <h1>Add Workout</h1>
-            <p> Input your workout details below. </p>
           </div>
 
           <div className="add-workout-form-container">
