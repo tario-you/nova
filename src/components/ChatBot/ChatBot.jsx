@@ -20,29 +20,15 @@ const ChatBot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
     const userMessage = { text: input, sender: "user" };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
+    const botMessage = { text: "hi", sender: "bot" };
+
+    setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
     setInput("");
-    setIsLoading(true);
-
-    try {
-      const response = await trainer.current.chat(input);
-      const botMessage = { text: response, sender: "bot" };
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
-    } catch (error) {
-      console.error("Error getting response from chatbot:", error);
-      const errorMessage = {
-        text: "Sorry, I encountered an error. Please try again.",
-        sender: "bot",
-      };
-      setMessages((prevMessages) => [...prevMessages, errorMessage]);
-    }
-
-    setIsLoading(false);
   };
 
   const handleReset = () => {

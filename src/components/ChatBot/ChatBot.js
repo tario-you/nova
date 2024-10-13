@@ -14,9 +14,12 @@ const ChatBot = () => {
 
   const handleSendMessage = () => {
     if (message.trim() !== "") {
-      setChatHistory([...chatHistory, { text: message, sender: "user" }]);
+      setChatHistory([
+        ...chatHistory,
+        { text: message, sender: "user" },
+        { text: "hi", sender: "bot" },
+      ]);
       setMessage("");
-      // Here you can add logic to process the message and get a response from the chatbot
     }
   };
 
