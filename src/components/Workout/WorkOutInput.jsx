@@ -143,7 +143,7 @@ const Workout = () => {
       backgroundRepeat: "no-repeat",
       backgroundPosition: "10px center",
       paddingLeft: "40px",
-      backgroundColor: state.isFocused ? "#333" : "black",
+      backgroundColor: state.isFocused ? "#494949" : "#323232",
       color: "white",
     }),
     menu: (provided) => ({
