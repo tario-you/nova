@@ -6,10 +6,12 @@ import Levelup from './components/Level/Levelup';
 import SetupForm from './components/SetupForm/SetupForm';
 import Workout from './components/Workout/WorkOutInput';
 import Navbar from './components/Navbar/Navbar';
+import { LevelProvider } from './components/Level/LevelContext.jsx';
 import './App.css'; // Import the global styles
 
 const App = () => {
   return (
+    <LevelProvider>
     <Router>
       <Navbar />
       <div className="main-content"> {/* This will ensure content starts below the navbar */}
@@ -21,6 +23,7 @@ const App = () => {
         </Routes>
       </div>
     </Router>
+    </LevelProvider>
   );
 };
 
