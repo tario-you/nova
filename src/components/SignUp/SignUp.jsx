@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
 
 function SignUp({ isOpen, onClose }) {
-    const { username, setUsername, password, setPassword } = useAuth();
+    const { username, setUsername, password, setPassword, bicep, setBicep } =
+        useAuth();
 
     const navigate = useNavigate();
 
