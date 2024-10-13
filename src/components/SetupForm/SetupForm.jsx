@@ -44,7 +44,7 @@ const SetupForm = () => {
       </div>
 
       <div className="setup-form-container">
-        <form className="setup-form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Gender</label>
             <select name="gender" value={formData.gender} onChange={handleChange}>

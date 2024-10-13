@@ -1,6 +1,7 @@
 // src/Sidebar.jsx
 import React from 'react';
 import './Workout.css'; // Import the CSS file for styling
+import AddWorkoutForm from './AddWorkoutForm';
 
 const Sidebar = () => {
     return (
@@ -8,7 +9,7 @@ const Sidebar = () => {
             <h2>Workout Tracker</h2>
             <ul>
                 <li>Home</li>
-                <li>Add Workout</li>
+                <li>Add Exercise</li>
                 <li>View Workouts</li>
                 <li>Settings</li>
                 <li>Help</li>
