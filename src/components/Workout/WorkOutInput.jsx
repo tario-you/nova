@@ -144,10 +144,14 @@ const Workout = () => {
       ...provided,
       backgroundColor: "#494949",
     }),
-    control: (provided) => ({
+    control: (provided, state) => ({
       ...provided,
       backgroundColor: "#494949",
       color: "white",
+      border: "1px solid #121212", // Custom border color
+      width: "100%", // Full width by default
+      maxWidth: "500px", // Maximum width for larger screens
+      minWidth: "200px", // Minimum width for smaller screens
     }),
     singleValue: (provided) => ({
       ...provided,

@@ -13,17 +13,19 @@ const Navbar = () => {
       <div className="links-container">
         <ul className="nav-links">
 
+          <hr className="hr"></hr>
           <li>
             <NavLink to="/body-model" className="nav-link" activeClassName="active-link">
-              Home
+              <img src="/icons/home.png" alt="Home Icon" className="icon" /> Home
             </NavLink>
           </li>
-
+          <hr className="hr"></hr>
           <li>
             <NavLink to="/workout" className="nav-link" activeClassName="active-link">
-              Workouts
+              <img src="/icons/dumbbell.png" alt="Workout Icon" className="icon" /> Workouts
             </NavLink>
           </li>
+          <hr className="hr"></hr>
 
         </ul>
       </div>
