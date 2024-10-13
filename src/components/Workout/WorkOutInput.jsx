@@ -257,17 +257,26 @@ const Workout = () => {
           position: "absolute",
           top: "10px",
           right: "10px",
-          padding: "5px 10px",
+          padding: "10px",
           backgroundColor: "rgba(0, 0, 0, 0.7)",
           color: "white",
           borderRadius: "5px",
           fontSize: "18px",
           fontWeight: "bold",
+          width: "200px",
         }}
       >
         <p>Level: {level}</p>
-        <p>Xp: {currentXP}</p>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <progress
+            value={currentXP}
+            max={requiredXP}
+            style={{ width: "100%", height: "20px" }}
+          />
+          <span>{currentXP}/{requiredXP}</span>
+        </div>
       </div>
+
       <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
         <div className="workout-form-section">
           <div className="instruction-container">
