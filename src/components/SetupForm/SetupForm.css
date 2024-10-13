@@ -1,16 +1,16 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .instruction-container {
   text-align: center;
-}
-
-/* setup form container */
-.setup-form-container {
+  margin-bottom: 20px;
 }
 
 /* setup form */
@@ -84,5 +84,11 @@
       font-size: 14px;
       padding: 8px 12px;
     }
+  }
+  
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   
