@@ -122,7 +122,7 @@ const muscleGroups = [
 const Workout = () => {
   const [workouts, setWorkouts] = useState([]);
 
-  const { username, setUsername, password, setPassword, bicep, setBicep } =
+  const { bicep, setBicep } =
     useAuth();
 
   const customStyles = {
@@ -208,8 +208,10 @@ const Workout = () => {
 
     if (muscleGroup === "Biceps Brachii" && bicep === "yellow") {
       setBicep("red");
+      console.log("Bicep color changed to red");
     } else if (muscleGroup === "Biceps Brachii") {
       setBicep("yellow");
+      console.log("Bicep color changed to yellow");
     }
   };
 

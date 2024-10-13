@@ -15,7 +15,7 @@ export default function App() {
           src="body front blank.png"
           style={{
             position: "absolute",
-            transform: `translate(-1000px,  -1425px) 
+            transform: `translate(-1100px,  -1425px) 
                           rotate(0deg) 
                           scale(0.25)`,
           }}
@@ -24,7 +24,7 @@ export default function App() {
           src="body back blank.png"
           style={{
             position: "absolute",
-            transform: `translate(-340px, -1625px)
+            transform: `translate(-570px, -1625px)
                           rotate(0deg) 
                           scale(0.22)`,
           }}
@@ -36,7 +36,7 @@ export default function App() {
               src="bicep red.png"
               style={{
                 position: "absolute",
-                transform: `translate(-140px, -380px)
+                transform: `translate(-240px, -380px)
                             rotate(0deg)
                             scale(0.24)`,
               }}
@@ -45,7 +45,7 @@ export default function App() {
               src="bicep red.png"
               style={{
                 position: "absolute",
-                transform: `translate(-346px, -380px)
+                transform: `translate(-446px, -380px)
                           rotate(0deg)
                           scale(0.24)
                           scaleX(-1)`,
@@ -60,7 +60,7 @@ export default function App() {
               src="bicep yellow.png"
               style={{
                 position: "absolute",
-                transform: `translate(-140px, -383px)
+                transform: `translate(-240px, -383px)
                             rotate(0deg)
                             scale(0.24)`,
               }}
@@ -69,7 +69,7 @@ export default function App() {
               src="bicep yellow.png"
               style={{
                 position: "absolute",
-                transform: `translate(-346px, -383px)
+                transform: `translate(-446px, -383px)
                           rotate(0deg)
                           scale(0.24)
                           scaleX(-1)`,
