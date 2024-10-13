@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./WorkOutInput.css";
 import Select from "react-select";
+import { useAuth } from "../../AuthContext";
 
 const muscleGroups = [
   {
@@ -121,6 +122,9 @@ const muscleGroups = [
 const Workout = () => {
   const [workouts, setWorkouts] = useState([]);
 
+  const { username, setUsername, password, setPassword, bicep, setBicep } =
+    useAuth();
+
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -189,7 +193,8 @@ const Workout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { exerciseName, muscleGroup, sets, reps, weight } = workoutData;
+    const { exerciseName, muscleGroup, sets, reps, weight } = workoutData; // !!
+
     if (exerciseName === "" || muscleGroup === "") {
       alert("Please enter the exercise name and muscle group.");
       return;
@@ -199,9 +204,13 @@ const Workout = () => {
       return;
     }
 
-    // ADD API CALL HERE
-    console.log("Workout Data Submitted:", workoutData);
     addWorkout(workoutData);
+
+    if (muscleGroup === "Biceps Brachii" && bicep === "yellow") {
+      setBicep("red");
+    } else if (muscleGroup === "Biceps Brachii") {
+      setBicep("yellow");
+    }
   };
 
   return (
