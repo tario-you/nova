@@ -1,5 +1,13 @@
+.chatbot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
 .chat-interface {
-    width: 300px;
+    width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
@@ -15,6 +23,7 @@
     margin-bottom: 10px;
     padding: 5px;
     border-radius: 5px;
+    color: #333;
   }
   
   .chat-message.user {

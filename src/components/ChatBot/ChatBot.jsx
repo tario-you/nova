@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BedRockPersonalTrainer } from "./BedRockAPICaller";
 import "./ChatBot.css";
+import { useAuth } from "../../AuthContext";
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([]);
@@ -8,6 +9,8 @@ const ChatBot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const trainer = useRef(new BedRockPersonalTrainer());
+
+  const { chatPopup, setChatPopup } = useAuth();
 
   useEffect(() => {
     scrollToBottom();
@@ -49,30 +52,34 @@ const ChatBot = () => {
 
   return (
     <div className="chatbot-container">
-      <div className="chatbot-messages">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
-            {message.text}
+      {chatPopup && (
+        <div>
+          <div className="chatbot-messages">
+            {messages.map((message, index) => (
+              <div key={index} className={`message ${message.sender}`}>
+                {message.text}
+              </div>
+            ))}
+            {isLoading && <div className="message bot">Thinking...</div>}
+            <div ref={messagesEndRef} />
           </div>
-        ))}
-        {isLoading && <div className="message bot">Thinking...</div>}
-        <div ref={messagesEndRef} />
-      </div>
-      <form onSubmit={handleSubmit} className="chatbot-input-form">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask your fitness question..."
-          disabled={isLoading}
-        />
-        <button type="submit" disabled={isLoading}>
-          Send
-        </button>
-      </form>
-      <button onClick={handleReset} className="reset-button">
-        Reset Conversation
-      </button>
+          <form onSubmit={handleSubmit} className="chatbot-input-form">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask your fitness question..."
+              disabled={isLoading}
+            />
+            <button type="submit" disabled={isLoading}>
+              Send
+            </button>
+          </form>
+          <button onClick={handleReset} className="reset-button">
+            Reset Conversation
+          </button>
+        </div>)}
+
     </div>
   );
 };

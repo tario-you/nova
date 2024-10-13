@@ -11,6 +11,7 @@ import "./App.css"; // Import the global styles
 import { AuthProvider } from "./AuthContext";
 import ChatIcon from "./components/ChatIcon/ChatIcon";
 import SignUp from "./components/SignUp/SignUp";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -21,6 +22,16 @@ const App = () => {
         <Router>
           <Navbar />
           {/* <SignUp isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
+          <div
+            style={{
+              position: "absolute",
+              zIndex: 1000,
+              right: "20px",
+              bottom: "80px",
+            }}
+          >
+            <ChatBot />
+          </div>
           <div className="main-content">
             {/* This will ensure content starts below the navbar */}
             <Routes>
