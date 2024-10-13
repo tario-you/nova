@@ -1,11 +1,11 @@
 /* main container */
 .main-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  /* padding: 20px; */
+  margin-top: -60px;
   box-sizing: border-box;
 }
 
@@ -13,9 +13,6 @@
 .instruction-container {
   text-align: center;
 }
-
-/* setup form container */
-.setup-form-container {}
 
 /* setup form */
 .form {
@@ -96,4 +93,59 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.modal-content {
+  background-color: #333333;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content form div {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+}
+
+.modal-content-setupform button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
 }

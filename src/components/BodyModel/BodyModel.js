@@ -138,11 +138,27 @@ export default function App() {
         <img
           src="body front blank.png"
           style={{
-            transform: `translate(-200px, 0px) 
+            transform: `translate(0px, 1700px) 
                           rotate(0deg) 
-                          scale(0.3)`,
+                          scale(0.4)`,
           }}
         />
+        <img
+          src="body back blank.png"
+          style={{
+            transform: `translate(0px, 0px) 
+                          rotate(0deg) 
+                          scale(1)`,
+          }}
+        />
+        {/* <img
+          src="body back blank.png"
+          style={{
+            transform: `translate(400px, 0px) 
+                          rotate(0deg) 
+                          scale(0.23)`,
+          }}
+        /> */}
       </div>
     </div>
   );
