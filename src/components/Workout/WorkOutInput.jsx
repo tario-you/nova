@@ -269,6 +269,7 @@ const Workout = () => {
         <p>Level: {level}</p>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <progress
+            className="orange-progress"
             value={currentXP}
             max={requiredXP}
             style={{ width: "100%", height: "20px" }}
