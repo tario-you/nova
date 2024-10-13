@@ -1,29 +1,47 @@
+/* Sidebar.css */
 .sidebar {
-  background-color: #121212;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0px;
-  width: 20%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  height: 100%; /* Adjust height as necessary */
+  background-color: #2e2e2e; /* Dark background for the sidebar */
+  padding: 1rem; /* Padding inside the sidebar */
+  position: fixed; /* Fixes the sidebar to the left */
+  top: 100px; /* Adds space from the top */
+  left: 20px; /* Adds space from the left */
+  width: 250px; /* Fixed width */
+  height: calc(80% - 40px); /* Full height minus top and bottom margins */
+  z-index: 1000; /* Stacks above other content */
+  border-radius: 8px; /* Rounded corners */
+  transition: width 0.3s; /* Smooth transition for width change */
+}
+
+/* Make the sidebar responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduced width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 150px; /* Further reduced width for mobile */
+  }
 }
 
 .sidebar h2 {
-  margin-bottom: 20px; /* Margin below the header */
+  margin-bottom: 20px; /* Space below the header */
+  color: white; /* Text color for the header */
 }
 
 .sidebar ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0;           /* Remove padding */
+  list-style-type: none; /* No bullet points */
+  padding: 0; /* No padding */
 }
 
 .sidebar ul li {
-  margin: 15px 0;      /* Space between items */
-  cursor: pointer;      /* Pointer cursor on hover */
+  margin: 15px 0; /* Space between items */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: white; /* Text color for the items */
 }
 
 .sidebar ul li:hover {
   text-decoration: underline; /* Underline on hover */
+  color: #ddd; /* Change color on hover */
 }
