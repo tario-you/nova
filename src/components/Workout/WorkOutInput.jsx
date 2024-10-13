@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./WorkOutInput.css";
 import Select from "react-select";
 import { useAuth } from "../../AuthContext";
-import { useLevel } from "../Level/LevelContext.jsx";
+import { useLevel } from "../../LevelContext.jsx";
 
 
 const muscleGroups = [
@@ -124,6 +124,11 @@ const muscleGroups = [
 const Workout = () => {
   const [workouts, setWorkouts] = useState([]);
 
+  const { level = 0, setLevel, currentXP = 0, setCurrentXP, requiredXP = 100, setRequiredXP } = useLevel() || {};
+
+  const { username, setUsername, password, setPassword, bicep, setBicep } =
+    useAuth();
+
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -231,6 +236,12 @@ const Workout = () => {
     }
 
     addWorkout(workoutData);
+
+    if (muscleGroup === "Biceps Brachii" && bicep === "yellow") {
+      setBicep("red");
+    } else if (muscleGroup === "Biceps Brachii") {
+      setBicep("yellow");
+    }
   };
 
   return (

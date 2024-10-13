@@ -5,8 +5,7 @@ import "./BodyModel.css"; // This pulls the CSS file into your app
 import { useAuth } from "../../AuthContext";
 
 export default function App() {
-  const { username, setUsername, password, setPassword, bicep, setBicep } =
-    useAuth();
+  const { bicep, setBicep } = useAuth();
 
   return (
     <div className="body-model">

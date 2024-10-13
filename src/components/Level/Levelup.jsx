@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLevel } from './LevelContext.jsx';
+import { useLevel } from '../../LevelContext.jsx';
 // Function component
 const LevelUp = () => {
   // State for level, current XP, and required XP
-  const {level, setLevel, currentXP, setCurrentXP, requiredXP, setRequiredXP} = useLevel();
+  const { level, setLevel, currentXP, setCurrentXP, requiredXP, setRequiredXP } = useLevel();
 
   // Function to simulate gaining experience
   const gainXP = (xp) => {

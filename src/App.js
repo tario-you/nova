@@ -6,7 +6,7 @@ import Levelup from "./components/Level/Levelup";
 import SetupForm from "./components/SetupForm/SetupForm";
 import Workout from "./components/Workout/WorkOutInput";
 import Navbar from "./components/Navbar/Navbar";
-import { LevelProvider } from "./components/Level/LevelContext.jsx";
+import { LevelProvider } from "./LevelContext.jsx";
 import "./App.css"; // Import the global styles
 import { AuthProvider } from "./AuthContext";
 import ChatIcon from "./components/ChatIcon/ChatIcon";
