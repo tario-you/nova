@@ -23,3 +23,14 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
+/* Make all text components white */
+body, p, h1, h2, h3, h4, h5, h6, span, div, a {
+  color: white;
+}
+
+/* Make all button backgrounds dark gray */
+button, .btn, input[type="button"], input[type="submit"] {
+  background-color: #333333;
+  color: white;
+}
