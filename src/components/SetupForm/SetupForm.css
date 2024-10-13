@@ -12,85 +12,85 @@
 }
 
 /* setup form container */
-.setup-form-container {
-}
+.setup-form-container {}
 
 /* setup form */
 .form {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    /*border: 1px groove #121212;*/
-    border-radius: 8px;
-    background-color: #323232;
-    gap: 8px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  /*border: 1px groove #121212;*/
+  border-radius: 8px;
+  background-color: #323232;
+  gap: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #121212;
+  border-radius: 4px;
+  background-color: #494949;
+  color: white;
+}
+
+.submit-button {
+  background-color: #494949;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #121212;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: white;
+  color: #494949;
+}
+
+/* Responsive styling */
+@media (max-width: 300px) {
+  .setup-form {
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #121212;
-    border-radius: 4px;
-    background-color: #494949;
-    color: white;
   }
-  
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
   .submit-button {
-    background-color: #494949;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #121212;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    padding: 8px 12px;
   }
-  
-  .submit-button:hover {
-    background-color: white;
-    color: #494949;
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 300px) {
-    .setup-form {
-      padding: 10px;
-    }
-  
-    .form-group input,
-    .form-group select {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .submit-button {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  }
-  
-  html, body, #root {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

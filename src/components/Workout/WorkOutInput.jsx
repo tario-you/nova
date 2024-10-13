@@ -220,7 +220,7 @@ const Workout = () => {
 
   return (
     <div className="main-container">
-      <div>
+      <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
         <div className="workout-form-section">
           <div className="instruction-container">
             <h1>Add Workout</h1>
