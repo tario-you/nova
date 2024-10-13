@@ -1,73 +1,19 @@
-/* Sidebar.css */
-.sidebar {
-  background-color: #2e2e2e; /* Dark background for the sidebar */
-  padding: 1rem; /* Padding inside the sidebar */
-  position: fixed; /* Fixes the sidebar to the left */
-  top: 100px; /* Adds space from the top */
-  left: 20px; /* Adds space from the left */
-  width: 250px; /* Fixed width */
-  height: calc(80% - 40px); /* Full height minus top and bottom margins */
-  z-index: 1000; /* Stacks above other content */
-  border-radius: 8px; /* Rounded corners */
-  transition: width 0.3s; /* Smooth transition for width change */
-}
-
-/* Make the sidebar responsive */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 200px; /* Reduced width on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    width: 150px; /* Further reduced width for mobile */
-  }
-}
-
-.sidebar h2 {
-  margin-bottom: 20px; /* Space below the header */
-  color: white; /* Text color for the header */
-}
-
-.sidebar ul {
-  list-style-type: none; /* No bullet points */
-  padding: 0; /* No padding */
-}
-
-.sidebar ul li {
-  margin: 15px 0; /* Space between items */
-  cursor: pointer; /* Pointer cursor on hover */
-  color: white; /* Text color for the items */
-}
-
-.sidebar ul li:hover {
-  text-decoration: underline; /* Underline on hover */
-  color: #ddd; /* Change color on hover */
-}
-
-<<<<<<< HEAD
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-}
-=======
 /* main container */
 .main-container {
   display: flex;
-  flex-direction: column;
-  height: calc(100vh - 80px);
-  align-items: center;
-  padding-bottom: 10px;
+  flex-direction: row;
 }
+
+.workout-form-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.workout-list-container {
+  flex: 1;
+  max-width: 400px;
+}
+
 
 /* instruction container */
 .instruction-container {
@@ -76,81 +22,120 @@
   /* padding: 10px; */
 }
 
-/* setup form container */
-.add-workout-form-container {
-}
-
 /* setup form */
 .form {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px groove #121212;
-    border-radius: 8px;
-    background-color: #323232;
-    gap: 8px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px groove #121212;
+  border-radius: 8px;
+  background-color: #323232;
+  gap: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #121212;
+  border-radius: 4px;
+  background-color: #494949;
+  color: white;
+}
+
+.submit-button {
+  background-color: #494949;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #121212;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: white;
+  color: #494949;
+}
+
+/* Responsive styling */
+@media (max-width: 300px) {
+  .setup-form {
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #121212;
-    border-radius: 4px;
-    background-color: #494949;
-    color: white;
   }
-  
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
   .submit-button {
-    background-color: #494949;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #121212;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    padding: 8px 12px;
   }
-  
-  .submit-button:hover {
-    background-color: white;
-    color: #494949;
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 300px) {
-    .setup-form {
-      padding: 10px;
-    }
-  
-    .form-group input,
-    .form-group select {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .submit-button {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  }
-  
->>>>>>> e5a335a8dcd3f4c203106f4f29492457f8b2885a
+}
+
+select option {
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 20px;
+}
+
+select option::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+/* Add these styles at the end of the file */
+.css-1s2u09g-control {
+  background-color: #494949 !important;
+  border-color: #121212 !important;
+}
+
+.css-1pahdxg-control {
+  background-color: #494949 !important;
+  border-color: #121212 !important;
+  box-shadow: 0 0 0 1px #121212 !important;
+}
+
+.css-26l3qy-menu {
+  background-color: #494949 !important;
+}
+
+.css-1n7v3ny-option {
+  background-color: #323232 !important;
+}
+
+.css-9gakcf-option {
+  background-color: #5c5c5c !important;
+}
+
+.css-1pountc-ValueContainer {
+  color: white !important;
+}
