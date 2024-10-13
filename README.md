@@ -1,4 +1,5 @@
 # LevelUp
+![LevelUpLogo](https://github.com/user-attachments/assets/c7dc7a06-69ee-4ea3-a97d-020e871b6799)
 
 ## Stack
 - React
