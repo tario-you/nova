@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./WorkOutInput.css";
 import Select from "react-select";
 import { useAuth } from "../../AuthContext";
-import { useLevel } from "../../LevelContext.jsx";
-
+import { useLevel } from "../../LevelContext";
 
 const muscleGroups = [
   {
@@ -246,10 +245,29 @@ const Workout = () => {
     } else if (muscleGroup === "Biceps Brachii") {
       setBicep("yellow");
     }
+
+    gainXP(sets * reps);
   };
 
   return (
     <div className="main-container">
+      <div
+        className="level-display"
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          padding: "5px 10px",
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          color: "white",
+          borderRadius: "5px",
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
+      >
+        <p>Level: {level}</p>
+        <p>Xp: {currentXP}</p>
+      </div>
       <div style={{ display: "flex", flexDirection: "row", gap: "50px" }}>
         <div className="workout-form-section">
           <div className="instruction-container">
