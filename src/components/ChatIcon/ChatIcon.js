@@ -1,19 +1,28 @@
 import React from "react";
 import "./ChatIcon.css";
+import { useAuth } from "../../AuthContext";
 
 const ChatIcon = () => {
+  const { chatPopup, setChatPopup } = useAuth();
+
   return (
-    <div className="chat-icon">
+    <button
+      className="chat-icon"
+      onClick={() => {
+        setChatPopup(!chatPopup);
+        console.log("Chat popup state:", chatPopup);
+      }}
+    >
       <img
         src="chat.png"
+        alt="Chat"
         style={{
-          // position: "absolute",
           transform: `translate(0px, 0px)
-                          rotate(0deg) 
-                          scale(0.1)`,
+                        rotate(0deg) 
+                        scale(0.1)`,
         }}
       />
-    </div>
+    </button>
   );
 };
 

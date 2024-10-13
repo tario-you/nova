@@ -6,10 +6,20 @@ export function AuthProvider({ children }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [bicep, setBicep] = useState("gray");
+  const [chatPopup, setChatPopup] = useState(false);
 
   return (
     <AuthContext.Provider
-      value={{ username, setUsername, password, setPassword, bicep, setBicep }}
+      value={{
+        username,
+        setUsername,
+        password,
+        setPassword,
+        bicep,
+        setBicep,
+        chatPopup,
+        setChatPopup,
+      }}
     >
       {children}
     </AuthContext.Provider>
