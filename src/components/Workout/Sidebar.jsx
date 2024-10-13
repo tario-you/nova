@@ -7,11 +7,8 @@ const Sidebar = () => {
         <div className="sidebar">
             <h2>Workout Tracker</h2>
             <ul>
-                <li>Home</li>
-                <li>Add Exercise</li>
-                <li>View Workouts</li>
-                <li>Settings</li>
-                <li>Help</li>
+                <li>Add Exercises</li>
+                
             </ul>
         </div>
     );

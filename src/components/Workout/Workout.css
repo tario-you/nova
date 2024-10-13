@@ -45,3 +45,16 @@
   text-decoration: underline; /* Underline on hover */
   color: #ddd; /* Change color on hover */
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
