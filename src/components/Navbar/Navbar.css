@@ -1,38 +1,32 @@
 /* Navbar.css */
-.navbar {
-    background-color: #333;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 6vh; /* Adjust height as necessary */
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    background-color: #575757;
-    border-radius: 5px;
-  }
-  
-  .active-link {
-    font-weight: bold;
-    color: #4caf50;
-  }
-  
+.sidebar {
+  height: 100vh; /* Full height */
+  width: 250px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed position */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  background-color: #111; /* Dark background color */
+  padding-top: 20px; /* Padding at the top */
+}
+
+.nav-links {
+  list-style-type: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-link {
+  display: block; /* Make the links appear as block elements */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Add padding */
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+  background-color: #575757; /* Change background color on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+.active-link {
+  background-color: #4CAF50; /* Highlight active link */
+  text-decoration: none; /* Ensure no underline on active state */
+}
