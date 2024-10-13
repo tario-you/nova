@@ -1,12 +1,17 @@
+/* main container */
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 80px);
   align-items: center;
+  padding-bottom: 10px;
 }
 
+/* instruction container */
 .instruction-container {
   text-align: center;
+  text-wrap: wrap;
+  /* padding: 10px; */
 }
 
 /* setup form container */
@@ -14,7 +19,7 @@
 }
 
 /* setup form */
-.setup-form {
+.form {
     display: flex;
     flex-direction: column;
     min-width: 300px;

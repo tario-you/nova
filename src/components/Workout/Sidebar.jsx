@@ -1,6 +1,7 @@
 // src/Sidebar.jsx
 import React from 'react';
 import './Workout.css'; // Import the CSS file for styling
+import AddWorkoutForm from './AddWorkoutForm';
 
 const Sidebar = () => {
     return (
