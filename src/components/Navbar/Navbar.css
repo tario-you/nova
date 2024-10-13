@@ -7,8 +7,7 @@
   left: 0; /* Align to left */
   background-color: #323232; /* Dark background color */
   padding-top: 20px; /* Padding at the top */
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
+  z-index: 1000;
 }
 
 .nav-links {
@@ -52,3 +51,33 @@
   align-items: left;
   text-align: left;
 } 
+
+.links-container ul{
+  margin: 0;
+}
+
+.links-container .nav-link {
+  display: flex;
+  font-weight: bold;
+  /* margin-left: 10px; */
+  margin: 0;
+  font-size: 125%;
+  align-items: center;
+  justify-content: left;
+  padding: 16px;
+}
+
+/* .links-container .nav-link:hover {
+  background-color: white;
+  transition: background-color 0.3s ease;
+} */
+
+.links-container hr {
+  margin: auto;
+}
+
+.links-container .icon {
+  max-width: 10%; /* Adjust the width of the icon */
+  height: auto; /* Adjust the height of the icon */
+  margin-right: 10px; /* Space between the icon and the text */
+}
