@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { BedRockPersonalTrainer } from "./BedRockAPICaller";
+import BedRockPersonalTrainer from "./BedRockAPICaller";
 import "./ChatBot.css";
 import { useAuth } from "../../AuthContext";
 
@@ -28,7 +28,6 @@ const ChatBot = () => {
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInput("");
     setIsLoading(true);
-
     try {
       const response = await trainer.current.chat(input);
       const botMessage = { text: response, sender: "bot" };
@@ -50,6 +49,13 @@ const ChatBot = () => {
     setMessages([]);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
   return (
     <div className="chatbot-container">
       {chatPopup && (
@@ -68,18 +74,17 @@ const ChatBot = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
               placeholder="Ask your fitness question..."
               disabled={isLoading}
             />
-            <button type="submit" disabled={isLoading}>
-              Send
-            </button>
+            <button type="submit" disabled={isLoading}></button>
           </form>
           <button onClick={handleReset} className="reset-button">
             Reset Conversation
           </button>
-        </div>)}
-
+        </div>
+      )}
     </div>
   );
 };
