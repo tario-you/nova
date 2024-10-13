@@ -5,8 +5,10 @@
   position: fixed; /* Fixed position */
   top: 0; /* Align to top */
   left: 0; /* Align to left */
-  background-color: #111; /* Dark background color */
+  background-color: #323232; /* Dark background color */
   padding-top: 20px; /* Padding at the top */
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
 .nav-links {
@@ -30,3 +32,20 @@
   background-color: #4CAF50; /* Highlight active link */
   text-decoration: none; /* Ensure no underline on active state */
 }
+
+.img-container {
+  align-items: center;
+}
+
+.img-container img {
+  width: 75%; /* Adjust this to control the size of the logo */
+  max-width: 200px; /* Optional: Maximum width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between the logo and the nav links */
+  object-fit: contain; /* Ensures the image scales without being cropped */
+}
+
+.links-container {
+  align-items: left;
+  text-align: left;
+} 
